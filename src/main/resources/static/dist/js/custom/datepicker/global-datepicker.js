@@ -1,21 +1,7 @@
 $('.date-format').datetimepicker({
-    format: 'YYYY-MM-DD',
-    display: {
-        viewMode: 'calendar',
-        components: {
-            decades: false,
-            year: true,
-            month: true,
-            date: true,
-            hours: false,
-            minutes: false,
-            seconds: false
-        }
-    },
-    localization: {
-        locale: 'ko'
-    }
+    format: 'YYYY-MM-DD'
 });
+
 
 let rangePicker = new tempusDominus.TempusDominus(document.getElementById('expensePeriod'), {
     dateRange: true,
@@ -54,12 +40,3 @@ let rangePicker = new tempusDominus.TempusDominus(document.getElementById('expen
         }
     }
 });
-
-$('.datetimerange-input').daterangepicker({
-    language: 'ko',
-    format: 'YYYY/MM/DD'
-});
-
-$('#plus').on('shown.bs.modal', function () {
-    $('#plus').trigger('focus')
-})

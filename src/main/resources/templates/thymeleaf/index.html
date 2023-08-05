@@ -106,14 +106,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="col"></div>
                     <div class="col-6">
                         <div class="btn-group col" role="group" aria-label="Expense Button">
-                            <button type="button" class="btn btn-lg btn-danger" data-toggle="modal"
+                            <button style="font-size: x-large" type="button" class="btn btn-lg btn-info" data-toggle="modal"
                                     data-target="#minusFormModal">
-                                <i class="fa fa-minus"></i>
+<!--                                <i class="fa fa-minus"></i>-->
+                                추가 하기
                             </button>
-                            <button type="button" class="btn btn-lg btn-info" data-toggle="modal"
-                                    data-target="#incomeFormModal">
-                                <i class="fa fa-plus"></i>
-                            </button>
+<!--                            <button type="button" class="btn btn-lg btn-info" data-toggle="modal"-->
+<!--                                    data-target="#incomeFormModal">-->
+<!--                                <i class="fa fa-plus"></i>-->
+<!--                            </button>-->
                         </div>
                     </div>
                     <div class="col"></div>
@@ -264,7 +265,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Modal -->
 <div class="modal fade" id="minusFormModal" tabindex="-1" role="dialog" aria-labelledby="minusFormModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="minusFormModalLabel">지출 내용</h5>
@@ -295,9 +296,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="amount" class="col-sm-2 col-form-label">금액</label>
+                        <label for="income" class="col-sm-2 col-form-label">수입</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control currency-input" id="amount">
+                            <input type="text" class="form-control currency-input" id="income">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="spent" class="col-sm-2 col-form-label">지출</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control currency-input" id="spent">
                         </div>
                     </div>
                 </form>
@@ -310,59 +317,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
 </div>
 
-<!-- Income Modal -->
-<div class="modal fade" id="incomeFormModal" tabindex="-1" role="dialog" aria-labelledby="incomeFormModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="incomeFormModalLabel">수입 내용</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group row">
-                        <label for="incomeDate" class="col-sm-2 col-form-label">수입 일시</label>
-                        <div class="col-sm-10">
-                            <div class="input-group date" data-target-input="nearest">
-                                <input id=incomeDate type="text"
-                                       class="input-group-append form-control datetimepicker-input date-format"
-                                       data-target="#incomeDate">
-                                <div class="input-group-append" data-target="#incomeDate"
-                                     data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="incomeDescription" class="col-sm-2 col-form-label">내용</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="incomeDescription">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="incomeAmount" class="col-sm-2 col-form-label">금액</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control currency-input" id="incomeAmount">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-                <button id="addIncome" type="button" class="btn btn-primary">등록</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- 수정 Modal -->
 <div class="modal fade" id="editFormModal" tabindex="-1" role="dialog" aria-labelledby="editFormModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editFormModalLabel">수정 내용</h5>
@@ -394,13 +352,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="editSpentAmount" class="col-sm-2 col-form-label">수입 금액</label>
+                        <label for="editIncomeAmount" class="col-sm-2 col-form-label">수입 금액</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control currency-input" id="editSpentAmount">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="editIncomeAmount" class="col-sm-2 col-form-label">지출 금액</label>
+                        <label for="editSpentAmount" class="col-sm-2 col-form-label">지출 금액</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control currency-input" id="editIncomeAmount">
                         </div>
@@ -433,6 +391,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 
@@ -478,8 +437,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 },
                 {
                     data: null, render: function () {
-                        return '<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editFormModal">수정</i></button> ' +
-                            '<button id="deleteButton" type="button" class="btn btn-sm btn-danger">삭제</i></button> ';
+                        return '<button id="editButton" style="font-size: x-large" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editFormModal">수정</i></button> ' +
+                            '<button id="deleteButton" style="font-size: x-large" type="button" class="btn btn-sm btn-danger">삭제</i></button> ';
                     }
                 }
             ]
@@ -504,13 +463,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
         });
 
         expenseTable.on('click', '#deleteButton', function () {
-            const data = expenseTable.row($(this).parents('tr')).data();
-            const id = data.id;
-            let going = confirm('삭제하시겠습니까?');
-            if (!going) {
-                return;
-            }
-            deleteOne(id);
+            Swal.fire({
+                title: '삭제 하시겠어요?',
+                showCancelButton: true,
+                cancelButtonText: '아니오',
+                confirmButtonText: '네, 삭제할게요'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const data = expenseTable.row($(this).parents('tr')).data();
+                    const id = data.id;
+                    deleteOne(id);
+                    Swal.fire('삭제 완료했습니다.', '', 'success')
+                }
+            });
         });
 
         function numberWithCommas(x) {
@@ -525,41 +490,49 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         $('#addExpense').on('click', function () {
-            let data = getExpenseData();
-            sendPost(JSON.stringify(data));
-        });
-
-        $('#addIncome').on('click', function () {
-            let data = getIncomeData();
-            sendPost(JSON.stringify(data));
+            Swal.fire({
+                title: '등록 하시겠어요?',
+                showCancelButton: true,
+                cancelButtonText: '아니오',
+                confirmButtonText: '네, 등록할게요'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let data = getExpenseData();
+                    sendPost(JSON.stringify(data));
+                    Swal.fire('등록 완료했습니다.', '', 'success')
+                }
+            });
         });
 
         $('#edit').on('click', function () {
-            let data = getEditData();
-            sendPut($('#editId').val(), JSON.stringify(data));
+            Swal.fire({
+                title: '수정 하시겠어요?',
+                showCancelButton: true,
+                cancelButtonText: '아니오',
+                confirmButtonText: '네, 수정할게요'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let data = getEditData();
+                    sendPut($('#editId').val(), JSON.stringify(data));
+                    $('#editFormModal').modal('hide');
+                }
+            });
         });
 
         function getExpenseData() {
+
             const date = document.querySelector('#expenseDate').value;
             const description = document.querySelector('#expenseDescription').value;
-            const amount = document.querySelector('#amount').value;
-            let number = amount.replaceAll(',', '');
-            return {
-                spentDate: date,
-                description: description,
-                spent: number
-            }
-        }
+            const spentAmount = document.querySelector('#spent').value;
+            let spentNumber = spentAmount.replaceAll(',', '');
+            const incomeAmount = document.querySelector('#income').value;
+            let incomeNumber = incomeAmount.replaceAll(',', '');
 
-        function getIncomeData() {
-            const date = document.querySelector('#incomeDate').value;
-            const description = document.querySelector('#incomeDescription').value;
-            const amount = document.querySelector('#incomeAmount').value;
-            let number = amount.replaceAll(',', '');
             return {
                 spentDate: date,
                 description: description,
-                income: number
+                spent: spentNumber,
+                income: incomeNumber
             }
         }
 
@@ -589,7 +562,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 $('#minusFormModal').modal('hide');
                 expenseTable.ajax.reload();
             }).fail(function (err) {
-                alert('등록 실패 e: ' + err)
+                Swal.fire({
+                    icon: 'error',
+                    title: '엇!!',
+                    text: '문제가 생겼어요',
+                    footer: `<span>${err.responseJSON.message}</span>`
+                })
                 console.error(err);
             });
         }
@@ -601,7 +579,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }).done(function () {
                 expenseTable.ajax.reload();
             }).fail(function (err) {
-                alert('삭제 실패 e: ' + err);
+                Swal.fire({
+                    icon: 'error',
+                    title: '엇!!',
+                    text: '문제가 생겼어요',
+                    footer: `<span>${err.responseJSON.message}</span>`
+                })
                 console.error(err);
             });
         }
@@ -614,9 +597,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 contentType: "application/json",
                 data: data
             }).done(function () {
-                $('#editFormModal').modal('hide');
-                location.reload();
+                Swal.fire('수정 완료했습니다.', '', 'success')
+                expenseTable.ajax.reload();
             }).fail(function (err) {
+                console.log(err)
+                Swal.fire({
+                    icon: 'error',
+                    title: '엇!!',
+                    text: '문제가 생겼어요',
+                    footer: `<span>${err.responseJSON.message}</span>`
+                })
                 console.error(err);
             });
         }
