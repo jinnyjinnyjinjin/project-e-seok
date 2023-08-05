@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  project-e-seok-mysql:
+    image: mysql:latest
+    container_name: mysql-demo
+    environment:
+      - MYSQL_DATABASE=project_e_seok
+      - MYSQL_ROOT_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    volumes:
+      - ./database/config:/etc/mysql/conf.d
+      - ./database/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
