@@ -2,6 +2,7 @@ package com.jinnyjinnyjinjin.projecteseok.api;
 
 import com.jinnyjinnyjinjin.projecteseok.api.request.ExpenseCreateRequest;
 import com.jinnyjinnyjinjin.projecteseok.api.request.ExpenseUpdateRequest;
+import com.jinnyjinnyjinjin.projecteseok.api.response.ExpenseTotalAmountResponse;
 import com.jinnyjinnyjinjin.projecteseok.service.expense.ExpenseService;
 import com.jinnyjinnyjinjin.projecteseok.service.expense.dto.ExpenseItemsDto;
 import lombok.RequiredArgsConstructor;
@@ -66,12 +67,12 @@ public class ExpenseController {
     }
 
     @GetMapping("/total")
-    public ResponseEntity<ApiResponse> findTotalExpenseAmount() {
-        int totalExpenseAmount = expenseService.findTotalExpenseAmount();
+    public ResponseEntity<ApiResponse> findTotalAmount() {
+        ExpenseTotalAmountResponse totalAmount = expenseService.findTotalExpenseAmount();
         return new ResponseEntity<>(new ApiResponse(
                 true,
                 "Successfully found.",
-                totalExpenseAmount),
+                totalAmount),
                 HttpStatus.OK);
     }
 }

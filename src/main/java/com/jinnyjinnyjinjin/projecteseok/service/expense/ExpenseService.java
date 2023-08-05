@@ -1,5 +1,6 @@
 package com.jinnyjinnyjinjin.projecteseok.service.expense;
 
+import com.jinnyjinnyjinjin.projecteseok.api.response.ExpenseTotalAmountResponse;
 import com.jinnyjinnyjinjin.projecteseok.domain.expense.entity.ExpenseItemsEntity;
 import com.jinnyjinnyjinjin.projecteseok.domain.expense.repository.ExpenseItemsRepository;
 import com.jinnyjinnyjinjin.projecteseok.service.expense.dto.ExpenseItemsDto;
@@ -55,7 +56,7 @@ public class ExpenseService {
     }
 
     @Transactional(readOnly = true)
-    public int findTotalExpenseAmount() {
+    public ExpenseTotalAmountResponse findTotalExpenseAmount() {
 
         LocalDate now = LocalDate.now();
         Month month = now.getMonth();
@@ -63,10 +64,14 @@ public class ExpenseService {
         LocalDate from = LocalDate.of(year, month, 1);
         List<ExpenseItemsEntity> recentExpenses = expenseRepository.findAllBySpentDateGreaterThanEqual(from);
 
-        int totalAmount = recentExpenses.stream()
+        int totalSpent = recentExpenses.stream()
                 .mapToInt(ExpenseItemsEntity::getSpent)
                 .sum();
 
-        return totalAmount;
+        int totalIncome = recentExpenses.stream()
+                .mapToInt(ExpenseItemsEntity::getIncome)
+                .sum();
+
+        return new ExpenseTotalAmountResponse(totalSpent, totalIncome);
     }
 }
