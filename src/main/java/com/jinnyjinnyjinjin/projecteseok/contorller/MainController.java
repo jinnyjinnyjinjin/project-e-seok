@@ -12,4 +12,9 @@ public class MainController {
     public String index() {
         return "index.html";
     }
+
+    @RequestMapping("/list")
+    public String list() {
+        return "list.html";
+    }
 }
