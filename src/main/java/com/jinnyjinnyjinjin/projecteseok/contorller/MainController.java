@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/")
 public class MainController {
 
     @RequestMapping
