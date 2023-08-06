@@ -9,9 +9,11 @@ spring:
       on-profile: prod
 
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MariaDBDialect
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
   session:
     store-type: jdbc
 
