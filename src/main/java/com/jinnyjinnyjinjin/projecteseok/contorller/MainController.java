@@ -1,16 +1,14 @@
 package com.jinnyjinnyjinjin.projecteseok.contorller;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequiredArgsConstructor
-@RequestMapping("/")
+@RequestMapping
 public class MainController {
 
-    @RequestMapping("")
+    @RequestMapping("/")
     public String index() {
-        return "index.html";
+        return "index";
     }
 }
