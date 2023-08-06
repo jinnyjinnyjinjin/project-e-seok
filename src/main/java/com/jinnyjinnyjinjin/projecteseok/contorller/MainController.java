@@ -8,13 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class MainController {
 
-    @RequestMapping("/index")
+    @RequestMapping
     public String index() {
         return "index.html";
-    }
-
-    @RequestMapping("/list")
-    public String list() {
-        return "list.html";
     }
 }
