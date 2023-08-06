@@ -36,6 +36,11 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+bootJar {
+	archivesBaseName = "project-e-seok"
+	archiveFileName = "project-e-seok.jar"
+}
+
 
 
 
