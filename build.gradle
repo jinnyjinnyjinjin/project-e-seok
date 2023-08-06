@@ -42,7 +42,7 @@ bootJar {
 	archiveFileName = "project-e-seok.jar"
 }
 
-jar {
+tasks.named("jar") {
 	enabled = false
 }
 
