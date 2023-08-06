@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/")
+@RequestMapping
 public class MainController {
 
-    @RequestMapping
+    @RequestMapping(value = "/")
     public String index() {
         return "index";
     }
