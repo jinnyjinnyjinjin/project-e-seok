@@ -42,6 +42,10 @@ bootJar {
 	archiveFileName = "project-e-seok.jar"
 }
 
+jar {
+	enabled = false
+}
+
 
 
 
