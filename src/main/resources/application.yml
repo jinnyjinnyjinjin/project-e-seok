@@ -16,8 +16,7 @@ spring:
     store-type: jdbc
 
   thymeleaf:
-    prefix: classpath:/templates/thymeleaf/
-    check-template-location: true
+    prefix: classpath:/templates/
     suffix: .html
     mode: HTML
     cache: true
