@@ -4,14 +4,6 @@ spring:
     username: root
     password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-  thymeleaf:
-    prefix: classpath:templates/thymeleaf/
-    check-template-location: false
-    suffix: .html
-    mode: HTML
-    cache: false
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,4 +11,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
+  thymeleaf:
+    prefix: classpath:templates/thymeleaf/
+    check-template-location: false
+    suffix: .html
+    mode: HTML
+    cache: true

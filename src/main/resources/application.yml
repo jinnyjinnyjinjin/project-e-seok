@@ -2,15 +2,10 @@ spring:
   profiles:
     active: local
 
----
-spring:
-  config:
-    activate:
-      on-profile: common
-
   thymeleaf:
-    prefix: templates/thymeleaf
+    prefix: classpath:templates/thymeleaf/
     check-template-location: true
     suffix: .html
     mode: HTML
     cache: true
+
