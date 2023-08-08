@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.projecteseok;
+package com.jinnyjinnyjinjin.projecteseok.contorller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
