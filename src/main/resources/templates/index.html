@@ -413,7 +413,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 decimal: ','
             },
             ajax: {
-                url: encodeURI('/api/v1/expenses'),
+                url: '/api/v1/expenses',
                 method: 'GET',
                 dataSrc: data => {
                     $('#totalExpense').text(numberWithCommas(data.data.totalSpent));
@@ -554,7 +554,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         function sendPost(data) {
             $.ajax({
                 method: 'POST',
-                url: encodeURI('/api/v1/expenses'),
+                url: '/api/v1/expenses',
                 accept: "application/json",
                 contentType: "application/json",
                 data: data
@@ -575,7 +575,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         function deleteOne(id) {
             $.ajax({
                 method: 'DELETE',
-                url: encodeURI('/api/v1/expenses/' + id),
+                url: '/api/v1/expenses/' + id,
             }).done(function () {
                 expenseTable.ajax.reload();
             }).fail(function (err) {
@@ -592,7 +592,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         function sendPut(id, data) {
             $.ajax({
                 method: 'PUT',
-                url: encodeURI('/api/v1/expenses/' + id),
+                url: '/api/v1/expenses/' + id,
                 accept: "application/json",
                 contentType: "application/json",
                 data: data
