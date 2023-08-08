@@ -7,16 +7,12 @@ spring:
   config:
     activate:
       on-profile: prod
-
   jpa:
     hibernate:
       ddl-auto: none
-
-  session:
-    store-type: jdbc
-
   thymeleaf:
     prefix: classpath:/templates/
+    check-template-location: false
     suffix: .html
     mode: HTML
     cache: true
