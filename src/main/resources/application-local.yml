@@ -14,9 +14,7 @@ spring:
       hibernate:
         format_sql: true
   thymeleaf:
-    prefix: classpath:/templates
-    check-template-location: false
+    prefix: classpath:/templates/
     suffix: .html
     mode: HTML
-    cache: true
-    enabled: true
+    cache: false

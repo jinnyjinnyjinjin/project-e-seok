@@ -1,7 +1,7 @@
 $('.date-format').datetimepicker({
-    format: 'YYYY-MM-DD'
+    format: 'YYYY-MM-DD',
+    locale: 'ko'
 });
-
 
 let rangePicker = new tempusDominus.TempusDominus(document.getElementById('expensePeriod'), {
     dateRange: true,
