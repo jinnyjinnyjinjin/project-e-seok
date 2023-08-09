@@ -9,7 +9,7 @@ spring:
       on-profile: prod
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
