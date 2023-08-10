@@ -19,15 +19,15 @@ notifications:
       - kkam2ya@gmail.com
 
 before_deploy:
-  - zip -r springboot-webservice *
+  - zip -r project-e-seok-webservice *
   - mkdir -p deploy
-  - mv springboot-webservice.zip deploy/springboot-webservice.zip
+  - mv project-e-seok-webservice.zip deploy/project-e-seok-webservice.zip
 
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-    bucket: springboot-webservice-build
+    bucket: project-e-seok-build
     region: ap-northeast-2
     skip_cleanup: true
     acl: private
