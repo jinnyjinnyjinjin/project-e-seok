@@ -34,4 +34,4 @@ deploy:
     local_dir: deploy
     wait-until-deployed: true
     on:
-      all_branches: true
+      branch: main
